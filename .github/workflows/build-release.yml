@@ -36,7 +36,7 @@ jobs:
       - name: 🧰 Set up luci-app-vlmcsd feed structure
         run: |
           set -e
-          # Also add a shim so ../../luci.mk from package/feeds/luci-app-vlmcsd/<pkg> works:
+          # Also add a shim so ../../luci.mk from package/feeds/jackie264/<pkg> works:
           mkdir -p package
           printf 'include $(TOPDIR)/feeds/luci/luci.mk\n' > package/luci.mk
 
@@ -96,7 +96,7 @@ jobs:
         uses: openwrt/gh-action-sdk@v9
         env:
           ARCH: ${{ env.ARCH }}
-          FEEDNAME: luci-app-vlmcsd
+          FEEDNAME: jackie264
           PACKAGES: ${{ env.PKG_NAME }}
           INDEX: 0
           FEED_DIR: ${{ github.workspace }}/feed
@@ -121,7 +121,7 @@ jobs:
         with:
           name: ${{ env.PKG_NAME }}-${{ matrix.target }}-${{ matrix.version }}
           path: |
-            bin/packages/*/luci-app-vlmcsd/${{ env.PKG_NAME }}*.ipk
+            bin/packages/*/jackie264/${{ env.PKG_NAME }}*.ipk
           if-no-files-found: ignore
 
   release:
