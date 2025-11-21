@@ -28,7 +28,7 @@ jobs:
 
     steps:
       - name: 🧾 Checkout repo
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: 📛 Set PKG_NAME from repo
         run: echo "PKG_NAME=${{ github.event.repository.name }}" >> "$GITHUB_ENV"
@@ -131,7 +131,7 @@ jobs:
 
     steps:
       - name: 🧾 Checkout repo
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
 
       - name: ⬇️ Download all build artifacts
         uses: actions/download-artifact@v6
@@ -151,7 +151,7 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
       - name: Checkout custom-packages repo
-        uses: actions/checkout@v5
+        uses: actions/checkout@v6
         with:
           repository: OneNAS-space/custom-packages
           token: ${{ secrets.CUSTOM_PACKAGES_TOKEN }}
